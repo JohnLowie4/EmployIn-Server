@@ -43,7 +43,18 @@ app.get("/", (req, res) => {
     });
 });
 
-
+app.get("/ssss", (req, res) => {
+  db.query(`SELECT * FROM business;`)
+    .then(data => {
+      const users = data.rows;
+      res.json(users);
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+});
 
 
 

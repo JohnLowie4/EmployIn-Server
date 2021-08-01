@@ -31,7 +31,7 @@ app.get("/jungle", (req, res) => {
 
 
 app.get("/", (req, res) => {
-  db.query(`SELECT * FROM applicant;`)
+  db.query(`SELECT * from applicant JOIN applicant_links ON applicant.id = applicant_links.applicant_id;`)
     .then(data => {
       const users = data.rows;
       res.json(users);
@@ -44,7 +44,10 @@ app.get("/", (req, res) => {
 });
 
 app.get("/ssss", (req, res) => {
-  db.query(`SELECT * FROM business;`)
+  db.query(`SELECT applicant.name as person, industry.name
+  from applicant
+  JOIN applicant_industry ON applicant.id = applicant_industry.applicant_id
+  JOIN industry ON applicant_industry.industry_id = industry.id`)
     .then(data => {
       const users = data.rows;
       res.json(users);

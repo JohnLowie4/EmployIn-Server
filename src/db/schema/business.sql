@@ -1,10 +1,10 @@
-DROP TABLE IF EXISTS business CASCADE;
+-- DROP TABLE IF EXISTS business CASCADE;
 
-CREATE TABLE business(
-  id SERIAL PRIMARY KEY NOT NULL,
-  summary VARCHAR(255) NOT NULL,
-  img_url VARCHAR(255) NOT NULL
-);
+-- CREATE TABLE business(
+--   id SERIAL PRIMARY KEY NOT NULL,
+--   summary VARCHAR(255) NOT NULL,
+--   img_url VARCHAR(255) NOT NULL
+-- );
 
 
 INSERT INTO business(summary, img_url)

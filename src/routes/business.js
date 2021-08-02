@@ -7,11 +7,30 @@ const business = (db) => {
       `
         SELECT * FROM business;
       `
-    ).then((response) => {
-      res.json(response.rows);
-    }).catch((error) => {
-      res.json(error.message);
-    });
+    )
+      .then((response) => {
+        res.json(response.rows);
+      })
+      .catch((error) => {
+        res.json(error.message);
+      });
+  });
+
+  // id GET request for all business
+  route.get("/:id", (req, res) => {
+    const business_id = req.params.id;
+    db.query(
+      `
+        SELECT * FROM business WHERE id = $1;
+      `,
+      [business_id]
+    )
+      .then((response) => {
+        res.json(response.rows[0]);
+      })
+      .catch((error) => {
+        res.json(error.message);
+      });
   });
 
   /**

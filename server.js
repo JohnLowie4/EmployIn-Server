@@ -15,6 +15,8 @@ const app = express();
 // defining an array to work as the database (temporary solution)
 // const ads = [{ title: 'Hello, world (again)!' }];
 
+app.use(bodyParser.urlencoded({ extended: true }));
+
 // adding Helmet to enhance your API's security
 app.use(helmet());
 
@@ -30,6 +32,7 @@ app.use(morgan('combined'));
 // \du to see super user
 // const userRoutes = require('./userRoutes');
 
+app.use(express.json());
 
 // PG database client/connection setup
 const { Pool } = require('pg');
@@ -37,44 +40,57 @@ const dbParams = require('./src/lib/db');
 const db = new Pool(dbParams);
 db.connect();
 
-app.use(bodyParser.urlencoded({ extended: true }));
-
-
-app.get("/jungle", (req, res) => {
-
-  res.status(200).send({ app: "Employin", date: new Date() })
-});
-
-
-
 app.get("/", (req, res) => {
-  db.query(`SELECT * from applicant JOIN applicant_links ON applicant.id = applicant_links.applicant_id;`)
-    .then(data => {
-      const users = data.rows;
-      res.json(users);
-    })
-    .catch(err => {
-      res
-        .status(500)
-        .json({ error: err.message });
-    });
+  res.send("Hello World");
 });
 
-app.get("/ssss", (req, res) => {
-  db.query(`SELECT applicant.name as person, industry.name
-  from applicant
-  JOIN applicant_industry ON applicant.id = applicant_industry.applicant_id
-  JOIN industry ON applicant_industry.industry_id = industry.id`)
-    .then(data => {
-      const users = data.rows;
-      res.json(users);
-    })
-    .catch(err => {
-      res
-        .status(500)
-        .json({ error: err.message });
-    });
-});
+
+const industry = require("./src/routes/industry");
+
+
+
+
+app.use("/api/industry", industry(db));
+
+
+
+
+
+// app.get("/jungle", (req, res) => {
+
+//   res.status(200).send({ app: "Employin", date: new Date() })
+// });
+
+
+
+// app.get("/", (req, res) => {
+//   db.query(`SELECT * from applicant JOIN applicant_links ON applicant.id = applicant_links.applicant_id;`)
+//     .then(data => {
+//       const users = data.rows;
+//       res.json(users);
+//     })
+//     .catch(err => {
+//       res
+//         .status(500)
+//         .json({ error: err.message });
+//     });
+// });
+
+// app.get("/ssss", (req, res) => {
+//   db.query(`SELECT applicant.name as person, industry.name
+//   from applicant
+//   JOIN applicant_industry ON applicant.id = applicant_industry.applicant_id
+//   JOIN industry ON applicant_industry.industry_id = industry.id`)
+//     .then(data => {
+//       const users = data.rows;
+//       res.json(users);
+//     })
+//     .catch(err => {
+//       res
+//         .status(500)
+//         .json({ error: err.message });
+//     });
+// });
 
 
 

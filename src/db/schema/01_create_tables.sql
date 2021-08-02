@@ -19,6 +19,7 @@ CREATE TABLE applicant(
 
 CREATE TABLE business(
   id SERIAL PRIMARY KEY NOT NULL,
+  name VARCHAR(255) NOT NULL,
   summary VARCHAR(255) NOT NULL,
   img_url VARCHAR(255) NOT NULL
 );
@@ -57,10 +58,10 @@ CREATE TABLE applicant_industry (
 );
 
 
-\i src/db/schema/applicant.sql
-\i src/db/schema/business.sql
-\i src/db/schema/applicant_links.sql
-\i src/db/schema/industry.sql
-\i src/db/schema/job_posting.sql
-\i src/db/schema/job_applications.sql
-\i src/db/schema/applicant_industry.sql
+\i src/db/seeds/01_applicant.sql
+\i src/db/seeds/02_business.sql
+\i src/db/seeds/03_applicant_links.sql
+\i src/db/seeds/04_industry.sql
+\i src/db/seeds/05_job_posting.sql
+\i src/db/seeds/06_job_applications.sql
+\i src/db/seeds/07_applicant_industry.sql

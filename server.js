@@ -34,9 +34,10 @@ const db = new Pool(dbParams);
 db.connect();
 
 app.get("/", (req, res) => {
-  res.send("That is not a proper API request route");
+  res.send("EmployIn-Server is running. Please refer to the README.md for accessing correct routes.");
 });
 
+// Require all database routes
 const applicant_industry = require("./src/routes/applicant_industry");
 const applicant_links = require("./src/routes/applicant_links");
 const applicant = require("./src/routes/applicant");
@@ -45,6 +46,7 @@ const industry = require("./src/routes/industry");
 const job_application = require("./src/routes/job_applications");
 const job_posting = require("./src/routes/job_posting");
 
+// Use routes to access the data
 app.use("/api/applicant_industry", applicant_industry(db));
 app.use("/api/applicant_links", applicant_links(db))
 app.use("/api/applicant", applicant(db));

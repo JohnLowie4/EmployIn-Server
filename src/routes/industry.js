@@ -1,6 +1,7 @@
 const route = require("express").Router();
 
 const industry = (db) => {
+  // Default GET request for all data in table
   route.get("/", (req, res) => {
     db.query(
       `
@@ -12,6 +13,11 @@ const industry = (db) => {
       res.json(error.message);
     });
   });
+
+  /**
+   * Future requests will be added here as the project progresses
+   */
+
   return route;
 };
 

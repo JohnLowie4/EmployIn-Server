@@ -14,6 +14,21 @@ const industry = (db) => {
     });
   });
 
+  // id GET request for industry name
+  route.get("/:id", (req, res) => {
+    const industry_id = req.params.id;
+    db.query(
+      `
+        SELECT * FROM industry WHERE id = $1;
+      `,
+      [industry_id]
+    ).then((response) => {
+      res.json(response.rows[0]);
+    }).catch((error) => {
+      res.json(error.message);
+    });
+  });
+
   /**
    * Future requests will be added here as the project progresses
    */

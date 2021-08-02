@@ -1,6 +1,7 @@
 const route = require("express").Router();
 
 const applicant_links = (db) => {
+  // Default GET request for all data in table
   route.get("/", (req, res) => {
     db.query(
       `
@@ -12,6 +13,11 @@ const applicant_links = (db) => {
       res.json(error.message);
     });
   });
+
+  /**
+   * Future requests will be added here as the project progresses
+   */
+
   return route;
 };
 

@@ -17,6 +17,7 @@ const applicant_industry = (db) => {
   });
 
   // id GET request for all applicant_industry
+  // not sure if this is necessary
   route.get("/:id", (req, res) => {
     const applicant_industry_id = req.params.id;
     db.query(

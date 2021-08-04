@@ -1,8 +1,8 @@
 // load .env data into process.env
-require('dotenv').config();
+require("dotenv").config();
 
 // Web server config
-const PORT = process.env.PORT || 7000;
+const PORT = process.env.PORT || 7001;
 const ENV = process.env.ENV || "development";
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -21,20 +21,22 @@ app.use(helmet());
 app.use(cors());
 
 // adding morgan to log HTTP requests
-app.use(morgan('combined'));
+app.use(morgan("combined"));
 
 app.use(express.json());
 
 // PG database client/connection setup
-const { Pool } = require('pg');
-const dbParams = require('./src/lib/db');
+const { Pool } = require("pg");
+const dbParams = require("./src/lib/db");
 const db = new Pool(dbParams);
 
 // Connect to database
 db.connect();
 
 app.get("/", (req, res) => {
-  res.send("EmployIn-Server is running. Please refer to the README.md for accessing correct routes.");
+  res.send(
+    "EmployIn-Server is running. Please refer to the README.md for accessing correct routes."
+  );
 });
 
 // Require all database routes
@@ -48,12 +50,12 @@ const job_posting = require("./src/routes/job_posting");
 
 // Use routes to access the data
 app.use("/api/applicant_industry", applicant_industry(db));
-app.use("/api/applicant_links", applicant_links(db))
+app.use("/api/applicant_links", applicant_links(db));
 app.use("/api/applicant", applicant(db));
 app.use("/api/business", business(db));
 app.use("/api/industry", industry(db));
 app.use("/api/job_application", job_application(db));
-app.use("/api/job_posting", job_posting(db))
+app.use("/api/job_posting", job_posting(db));
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

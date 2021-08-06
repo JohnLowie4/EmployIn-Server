@@ -1,4 +1,4 @@
-INSERT INTO applicant_industry (industry_id, job_applications_id, applicant_id)
+INSERT INTO applicant_industry (industry_id, job_application_id, applicant_id)
 VALUES 
 (1,  1, 1),
 (2,  2, 2),

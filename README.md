@@ -44,9 +44,17 @@ psql -U <PGUSER> -h <PGHOST> <PGDATABASE>
 
 6. Go to your web browser and navigate to `http://localhost:7001` to begin API requests.
 
-##### Some tips for setting up
+#### Some tips for setting up
 
 You can use the [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en) Google extension or the [Insomnia](https://insomnia.rest/) app to make the data easier to read.
+
+##### JSON Formatter
+
+![JSON Formatter](./img/JSONFormatter.png)
+
+##### Insomnia
+
+![Insomnia](./img/Insomnia.png)
 
 ## API
 

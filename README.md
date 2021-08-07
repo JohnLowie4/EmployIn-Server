@@ -2,6 +2,12 @@
 
 This is the back-end server and database for [EmployIn](https://github.com/JohnLowie4/EmployIn) React Native app.
 
+## Contributors
+
+- [Leam Murphy](https://github.com/leammurphy)
+- [Alex Li](https://github.com/a-218)
+- [John Lowie](https://github.com/JohnLowie4)
+
 ## Notes
 
 This server is running a PostgreSQL database with node version 12.22.3
@@ -36,11 +42,13 @@ psql -U <PGUSER> -h <PGHOST> <PGDATABASE>
 
 5. Open another terminal or command prompt and run `npm start` to start the server.
 
-6. Go to your web browser and navigate to `http://localhost:7000` to begin API requests.
+6. Go to your web browser and navigate to `http://localhost:7001` to begin API requests.
+
+##### Some tips for setting up
+
+You can use the [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en) Google extension or the [Insomnia](https://insomnia.rest/) app to make the data easier to read.
 
 ## API
-
-More request routes will be added as the project progresses.
 
 ### applicant
 
@@ -159,9 +167,3 @@ Response
   }
 ]
 ```
-
-#### Contributors
-
-- [Leam Murphy](https://github.com/leammurphy)
-- [Alex Li](https://github.com/a-218)
-- [John Lowie](https://github.com/JohnLowie4)

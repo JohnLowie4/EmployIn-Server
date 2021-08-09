@@ -79,6 +79,47 @@ VALUES
 -- 
 (20, 'https://ca.linkedin.com/'),
 (20, 'https://github.com/'),
-(20, 'https://twitter.com/');
+(20, 'https://twitter.com/'),
+
+(21, 'https://ca.linkedin.com/'),
+(21, 'https://github.com/'),
+(21, 'https://www.youtube.com/'),
+-- 
+(22, 'https://ca.linkedin.com/'),
+(22, 'https://github.com/'),
+(22, ''),
+-- 
+(23, 'https://ca.linkedin.com/'),
+(23, 'https://github.com/'),
+(23, 'https://twitter.com/'),
+-- 
+(24, 'https://ca.linkedin.com/'),
+(24, 'https://github.com/'),
+(24, 'https://www.youtube.com/'),
+-- 
+(25, 'https://ca.linkedin.com/'),
+(25, 'https://github.com/'),
+(25, 'https://medium.com/'),
+-- 
+(26, 'https://ca.linkedin.com/'),
+(26, 'https://github.com/'),
+(26, 'https://twitter.com/'),
+-- 
+(27, 'https://ca.linkedin.com/'),
+(27, 'https://github.com/'),
+(27, 'https://personalblog.com/'),
+-- 
+(28, 'https://ca.linkedin.com/'),
+(28, 'https://github.com/'),
+(28, 'https://medium.com/'),
+-- 
+(29, 'https://ca.linkedin.com/'),
+(29, 'https://github.com/'),
+(29, 'https://twitter.com/'),
+-- 
+(30, 'https://ca.linkedin.com/'),
+(30, 'https://github.com/'),
+(30, 'https://www.youtube.com/');
+-- 
 
 
